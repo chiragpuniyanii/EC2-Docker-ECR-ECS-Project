@@ -43,3 +43,11 @@ CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 # Expose port 80 to allow incoming HTTP traffic
 EXPOSE 80
+
+
+
+# Build the Docker image
+docker build -t project-image .
+
+# Run the Docker container
+docker run -itd -p 80:80 --name project project-image
